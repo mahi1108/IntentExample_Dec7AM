@@ -14,12 +14,35 @@ class MainActivity : AppCompatActivity() {
 
         dial.setOnClickListener {
                 val i = Intent( )
-                i.action = Intent.ACTION_DIAL
-                i.data = Uri.parse("tel:${et1.text.toString()}")
+          //      i.action = Intent.ACTION_DIAL
+          //      i.data = Uri.parse("tel:${et1.text}")
+        //            i.action = Intent.ACTION_VIEW
+        //            i.data = Uri.parse("${et1.text}")
+            i.action = Intent.ACTION_GET_CONTENT
+            i.type = "image/*"
                 startActivity(i)
         }
-        next.setOnClickListener {  }
-        whatsapp.setOnClickListener {  }
+        next.setOnClickListener {
+            val i = Intent(this@MainActivity,
+                                            WelcomeActivity::class.java)
+            i.putExtra("name",et2.text.toString())
+            i.putExtra("email",et3.text.toString())
+
+            startActivity(i)
+        }
+        whatsapp.setOnClickListener {
+            val i = packageManager.
+                getLaunchIntentForPackage("com.whatsapp")
+            if(i==null){
+                    val i1 = Intent( )
+                    i1.action = Intent.ACTION_VIEW
+                    i1.data = Uri.parse(
+                        "https://play.google.com/store/apps/details?id=com.whatsapp")
+                    startActivity(i1)
+            }else {
+                startActivity(i)
+            }
+        }
 
     }
 }

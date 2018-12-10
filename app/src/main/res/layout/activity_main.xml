@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/et1"
         android:hint="Enter Number"
-        android:inputType="phone"/>
+        android:inputType="text"/>
 
     <Button
             android:layout_width="150dp"
@@ -18,6 +18,20 @@
             android:textSize="20sp"
             android:id="@+id/dial"
             android:layout_gravity="center"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et2"
+            android:hint="Enter Name"
+            android:inputType="text"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et3"
+            android:hint="Enter Email"
+            android:inputType="text"/>
 
     <Button
             android:layout_width="150dp"
